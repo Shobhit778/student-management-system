@@ -19,4 +19,21 @@ public class StudentService {
         System.out.println(s);
     }
     }
+    public Student searchStudent(int Id){
+        for(Student student : studentList){
+            if(student.getId() == Id){
+                return student;
+            }
+        }
+        return null;
+    }
+    public boolean deleteStudent(int id){
+        Student student = searchStudent(id);
+        if(student != null){
+            studentList.remove(student);
+            return true;
+        }
+            return false;
+    }
+
 }
