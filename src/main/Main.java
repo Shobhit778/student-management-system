@@ -1,4 +1,5 @@
 package main;
+
 import model.Student;
 import service.StudentService;
 import java.util.Scanner;
@@ -9,7 +10,7 @@ public class Main {
 
         StudentService studentService = new StudentService();
         while(true) {
-            System.out.println("=====STUDENT MANAGEMENT SYSTEM=====");
+            System.out.println("===== STUDENT MANAGEMENT SYSTEM --- " + Student.getCollege() +" =====" );
             System.out.println("1. Add Student");
             System.out.println("2. View Students");
             System.out.println("3. Search Student");
@@ -99,7 +100,7 @@ public class Main {
                             case 1:
                                 System.out.print("Enter the updated Name: ");
                                 String updateName = sc.nextLine();
-                                updateStudent.setName(updateName);
+                                studentService.updateStudentName(updateName, updateId);
                                 System.out.println("Name updated Successfully");
                                 break;
 
@@ -107,21 +108,21 @@ public class Main {
                                 System.out.print("Enter the updated Age: ");
                                 int updateAge = sc.nextInt();
                                 sc.nextLine();
-                                updateStudent.setAge(updateAge);
+                                studentService.updateStudentAge(updateAge, updateId);
                                 System.out.println("Age updated Successfully");
                                 break;
 
                             case 3:
                                 System.out.print("Enter the updated Email: ");
                                 String updateEmail = sc.nextLine();
-                                updateStudent.setEmail(updateEmail);
+                                studentService.updateStudentEmail(updateEmail, updateId);
                                 System.out.println("Email updated Successfully");
                                 break;
 
                             case 4:
                                 System.out.print("Enter the updated Marks: ");
                                 double updateMarks = sc.nextDouble();
-                                updateStudent.setMarks(updateMarks);
+                                studentService.updateStudentMarks(updateMarks, updateId);
                                 System.out.println("Marks updated Successfully");
                                 break;
 
